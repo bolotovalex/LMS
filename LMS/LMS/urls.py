@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from personal import views as personal_views
 from math_operations import views as m_operations
+from learn_module import views as learn_module
 
 int_operations = [
     path('', m_operations.index),
@@ -34,4 +35,5 @@ urlpatterns = [
     path('test/<param1>/<param2>/', personal_views.test),
     path('test/<param1>/<param2>/<param3>', personal_views.test),
     re_path(r'^(?P<int1>\d+)/(?P<int2>\d+)/', include(int_operations)),
+    path('learn_module/', learn_module.index)
 ]
